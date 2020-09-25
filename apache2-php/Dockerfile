@@ -24,8 +24,8 @@ RUN apk --no-cache --update \
     bash 
 
 RUN (mkdir -p /etc/apache2/conf.d/ || true) \
-    && cd /var/www/localhost/ && \
-    && curl https://releases.wikimedia.org/mediawiki/1.34/mediawiki-1.34.2.tar.gz -L --output mediawiki-1.34.2.tar.gz \
+    && cd /var/www/localhost/ \
+    && curl -LO https://releases.wikimedia.org/mediawiki/1.34/mediawiki-1.34.2.tar.gz \
     && tar -xf mediawiki-1.34.2.tar.gz && rm -f mediawiki-1.34.2.tar.gz \
     && ln -s mediawiki-1.34.2 mediawiki
 
